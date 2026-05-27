@@ -31,6 +31,7 @@ export class ClientesService {
     }
     if (updateClienteDto.email) {
       const emailOwner = await this.repo.findByEmail(updateClienteDto.email); // Verifica se o email já está em uso por outro cliente
+      
         if (emailOwner && emailOwner.id !== id) {
             throw new ConflictException(`Email ${updateClienteDto.email} is already in use`); // Lança uma exceção se o email já estiver em uso por outro cliente
         }
