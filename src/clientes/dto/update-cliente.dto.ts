@@ -1,4 +1,4 @@
-import { PartialType } from '@nestjs/mapped-types';//importa a função PartialType do NestJS para criar um DTO de atualização baseado no DTO de criação
-import { CreateClienteDto } from './create-cliente.dto'; //importa o DTO de criação para reutilizar as validações
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateClienteDto } from './create-cliente.dto';
 
 export class UpdateClienteDto extends PartialType(CreateClienteDto) {}
