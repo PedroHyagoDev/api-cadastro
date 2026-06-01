@@ -1,4 +1,4 @@
-    import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';//importa os decoradores necessários do NestJS para definir o esquema do Mongoose
+    import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
     import { Document } from 'mongoose';
 
     export type ClienteDocument = ClienteModel & Document;//define o tipo do documento do cliente como a interseção entre o modelo do cliente e o documento do Mongoose
@@ -17,4 +17,4 @@
     @Prop()
     endereco?: string;
     }
-    export const ClienteSchema = SchemaFactory.createForClass(ClienteModel);//cria o esquema do Mongoose a partir da classe do modelo do cliente usando a função SchemaFactory do NestJS
+    export const ClienteSchema = SchemaFactory.createForClass(ClienteModel);

@@ -1,7 +1,7 @@
 # API de Cadastro de Clientes
 
 ## Descrição
-[escreve aqui o que essa API faz em 2-3 linhas]
+Essa Api foi criada com o intuito de cadastrar novos clientes de forma simples e prática,para facilitar o processo e o trabalho de quem utiliza esse tipo de ferramenta.
 
 ## Tecnologias utilizadas
 - NestJS
@@ -17,12 +17,9 @@
 - MongoDB Atlas
 
 ## Instalação
-```bash
+Ao abrir o terminal do codigo digite:
 npm install
-```
-
-## Configuração
-   
+(que ja fará todas as intalações)
     
 ## Como executar
 
@@ -55,4 +52,4 @@ npm run start:dev
 
 ## Autores
 - Pedro Hyago Cardoso de Lima - 01847939
-- [nome do colega] - [matrícula do colega]
+- Rafael José de França Santana  - 01832459

@@ -5,8 +5,7 @@ import { ClientesModule } from './clientes/clientes.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(), // ← lê o .env
-    MongooseModule.forRoot(process.env.MONGODB_URI as string), // ← conecta ao MongoDB usando a URI do .env
+    MongooseModule.forRoot('mongodb://admin:admin@ac-muw4axi-shard-00-00.xqktun5.mongodb.net:27017,ac-muw4axi-shard-00-01.xqktun5.mongodb.net:27017,ac-muw4axi-shard-00-02.xqktun5.mongodb.net:27017/cadastro?ssl=true&replicaSet=atlas-psmkbq-shard-0&authSource=admin&appName=Cluster0'),
     ClientesModule,
   ],
 })
