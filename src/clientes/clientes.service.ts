@@ -10,22 +10,27 @@ export class ClientesService {
     @Inject('CLIENTES_REPOSITORY')
     private readonly repo: IClientesRepository,
   ) {}
-  async create(createClienteDto: CreateClienteDto) {
+ async create(createClienteDto: CreateClienteDto) {
   try {
     return await this.repo.create(createClienteDto);
-  } catch (erro) {
+  } catch (erro: any) {
+    if (erro.code === 11000) {
+      throw new ConflictException('Dados ja cadastrados');
+    }
     throw new InternalServerErrorException('Erro ao cadastrar cliente');
   }
 }
     async findAll() {
     try {      return await this.repo.findAll();
-    } catch (erro) {      throw new InternalServerErrorException('Erro ao buscar clientes');
+    } catch (erro) {      console.log('ERRO:', erro); 
+      throw new InternalServerErrorException('Erro ao buscar clientes');
     } 
   }
     async findOne(id: string) {
       try {
     return await this.repo.findById(id);
     } catch (erro) {
+      console.log('ERRO:', erro); 
       throw new InternalServerErrorException('Erro ao buscar cliente');
     }
     }
@@ -33,6 +38,7 @@ export class ClientesService {
       try {
     return await this.repo.findByName(nome);
     } catch (erro) {
+      console.log('ERRO:', erro);
       throw new InternalServerErrorException('Erro ao buscar cliente por nome');
     }
     }
@@ -40,6 +46,7 @@ export class ClientesService {
       try {
     return await this.repo.findByEmail(email);
       } catch (erro) {
+        console.log('ERRO:', erro); 
         throw new InternalServerErrorException('Erro ao buscar cliente por email');
       }
     }
@@ -57,6 +64,7 @@ export class ClientesService {
     try {
       return await this.repo.update(id, updateClienteDto);
     } catch (erro) {
+      console.log('ERRO:', erro); 
       throw new InternalServerErrorException('Erro ao atualizar cliente');
     }
     }
@@ -68,6 +76,7 @@ export class ClientesService {
     try {
       return await this.repo.delete(id);
     } catch (erro) {
+      console.log('ERRO:', erro); 
       throw new InternalServerErrorException('Erro ao excluir cliente');
     }
   }
