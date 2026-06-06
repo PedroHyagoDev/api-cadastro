@@ -2,10 +2,19 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { ClientesModule } from './clientes/clientes.module';
+import { ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://admin:admin@ac-muw4axi-shard-00-00.xqktun5.mongodb.net:27017,ac-muw4axi-shard-00-01.xqktun5.mongodb.net:27017,ac-muw4axi-shard-00-02.xqktun5.mongodb.net:27017/cadastro?ssl=true&replicaSet=atlas-psmkbq-shard-0&authSource=admin&appName=Cluster0'),
+    MongooseModule.forRootAsync({
+  useFactory: (config: ConfigService) => ({
+    uri: config.get<string>('MONGODB_URI'),
+  }),
+  inject: [ConfigService],
+}),
+        ConfigModule.forRoot({
+          isGlobal: true,
+        }),
     ClientesModule,
   ],
 })

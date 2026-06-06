@@ -19,7 +19,7 @@ Essa Api foi criada com o intuito de cadastrar novos clientes de forma simples e
 ## Instalação
 Ao abrir o terminal do codigo digite:
 npm install
-(que ja fará todas as intalações)
+(que ja fará todas as instalações)
     
 ## Como executar
 
@@ -32,7 +32,7 @@ npm run start:dev
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
-| POST | /clientes | cria um qnovo cliente |
+| POST | /clientes | cria um novo cliente |
 | GET | /clientes | busca o cliente de forma geral |
 | GET | /clientes/search/name/:nome | busca o cliente pelo nome |
 | GET | /clientes/search/email/:email | busca o cliente pelo email |
@@ -43,12 +43,22 @@ npm run start:dev
 ## Exemplo de requisição
 
 ### Criar cliente
-
+```json
 {
   "nome": "Joãozinho",
   "email": "joaozinho06@gmail.com",
-  "phone": "999999999"
+  "telefone": "999999999",
+  "endereco":"Camaraselva"
 }
+```
+
+## Variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto com:
+
+```env
+MONGODB_URI=sua_string_de_conexao_aqui
+```
 
 ## Autores
 - Pedro Hyago Cardoso de Lima - 01847939

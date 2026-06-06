@@ -12,7 +12,7 @@
     email!: string;
 
     @Prop({ required: true ,unique:true})
-    phone!: string;
+    telefone!: string;
 
     @Prop()
     endereco?: string;

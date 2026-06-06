@@ -11,7 +11,7 @@ export class CreateClienteDto {
 
   @IsNotEmpty()
   @IsString()
-  phone!: string;
+  telefone!: string;
 
   @IsOptional()
   @IsString()
