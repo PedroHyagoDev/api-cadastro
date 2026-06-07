@@ -57,7 +57,7 @@ npm run start:dev
 Crie um arquivo `.env` na raiz do projeto com:
 
 ```env
-MONGODB_URI=sua_string_de_conexao_aqui
+MONGO_URI=sua_string_de_conexao_aqui
 ```
 
 ## Autores
