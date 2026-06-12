@@ -24,17 +24,17 @@ export class ClientesController {
     @Get('search/name/:nome')
     findByName(@Param('nome') nome: string) {
       return this.service.findByName(nome);
-    }// Rota para obter clientes por nome
+    }
 
     @ApiOperation({ summary: 'Obter um cliente por email' })
     @Get('search/email/:email')
     findByEmail(@Param('email') email: string) {
       return this.service.findByEmail(email);
-    }// Rota para obter um cliente específico por email
+    }
      @ApiOperation({ summary: 'Obter um cliente por ID' })
      @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.service.findOne(id);// Rota para obter um cliente específico por ID
+    return this.service.findOne(id);
   } 
 
     @ApiOperation({ summary: 'Atualizar um cliente por ID' })

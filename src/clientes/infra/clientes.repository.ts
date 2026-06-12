@@ -27,6 +27,10 @@ export class ClientesRepository implements IClientesRepository {
       return this.model.findOne({ email }).exec() as any; 
     }
 
+    findByTelefone(telefone: string): Promise<Cliente | null> { 
+      return this.model.findOne({ telefone }).exec() as any; 
+    }
+
     create(data: Partial<Cliente>): Promise<Cliente> {
       const createdCliente = new this.model(data);
       return createdCliente.save() as any;

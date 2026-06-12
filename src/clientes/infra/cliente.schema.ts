@@ -18,3 +18,4 @@
     endereco?: string;
     }
     export const ClienteSchema = SchemaFactory.createForClass(ClienteModel);
+    ClienteSchema.post('init', function() {});
