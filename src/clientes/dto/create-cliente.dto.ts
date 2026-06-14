@@ -1,19 +1,19 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateClienteDto {
-  @IsNotEmpty()  // ← não pode ser vazio
-  @IsString()    // ← tem que ser texto
+  @IsNotEmpty()
+  @IsString()
   nome!: string;
 
-  @IsNotEmpty()  // ← não pode ser vazio
-  @IsEmail()     // ← tem que ser um email válido
+  @IsNotEmpty()
+  @IsEmail()
   email!: string;
 
-  @IsNotEmpty()  // ← não pode ser vazio
-  @IsString()    // ← tem que ser texto
-  phone!: string;
+  @IsNotEmpty()
+  @IsString()
+  telefone!: string;
 
-  @IsNotEmpty()  // ← não pode ser vazio
-  @IsString()    // ← tem que ser texto
-  endereco!: string;
+  @IsOptional()
+  @IsString()
+  endereco?: string;
 }

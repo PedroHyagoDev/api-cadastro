@@ -8,15 +8,15 @@ import { ClienteModel, ClienteSchema } from './infra/cliente.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: ClienteModel.name, schema: ClienteSchema }]), // Configura o módulo Mongoose para usar o esquema do cliente
+    MongooseModule.forFeature([{ name: ClienteModel.name, schema: ClienteSchema }]), 
   ],
-  controllers: [ClientesController], // Registra o controlador de clientes
+  controllers: [ClientesController],
   providers: [
-    ClientesService, // Registra o serviço de clientes
+    ClientesService,
     {
-      provide: 'CLIENTES_REPOSITORY', // Define um token para injeção de dependência do repositório
-      useClass: ClientesRepository, // Especifica a classe concreta a ser usada para o repositório
+      provide: 'CLIENTES_REPOSITORY', 
+      useClass: ClientesRepository, 
     },
   ],
 })
-export class ClientesModule {}  // Define o módulo de clientes, que inclui o controlador, serviço e repositório necessários para gerenciar os clientes
+export class ClientesModule {}  
